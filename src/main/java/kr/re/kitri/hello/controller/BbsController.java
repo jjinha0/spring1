@@ -1,5 +1,6 @@
 package kr.re.kitri.hello.controller;
 
+import kr.re.kitri.hello.model.Article;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,39 +38,36 @@ public class BbsController {
     //요즘엔 다 이렇게 짬.
     @RequestMapping(value = "/bbs/write", method = RequestMethod.POST)
     public ModelAndView writeText(
-            @RequestParam("id") String Id,
-            @RequestParam("password") String password,
-            @RequestParam("title") String title,
-            @RequestParam("author") String author,
-            @RequestParam("content") String content
+//            @RequestParam("id") String Id,
+//            @RequestParam("password") String password,
+//            @RequestParam("title") String title,
+//            @RequestParam("author") String author,
+//            @RequestParam("content") String content
+            Article article //위에처럼 여러번 하기 싫으니까 article이라는 model class만들어서 사용.
             ){
 
-        System.out.println(Id);
-        System.out.println(password);
-        System.out.println(title);
-        System.out.println(author);
-        System.out.println(content);
-
+        System.out.println(article);
         ModelAndView mav = new ModelAndView();
         mav.setViewName("bbs/write_text_do");
-        mav.addObject("Id",Id);
-        mav.addObject("password",password);
-        mav.addObject("title",title);
-        mav.addObject("author",author);
-        mav.addObject("content",content);
+        mav.addObject("article",article);
+//        mav.addObject("myId",myId);
+//        mav.addObject("password",password);
+//        mav.addObject("title",title);
+//        mav.addObject("author",author);
+//        mav.addObject("content",content);
         return mav;
 
     }
     //좀 오래된 방식.
 //    @RequestMapping("/bbs/write/do")
 //    public String writeText(HttpServletRequest request){
-//        String Id = request.getParameter("id");
+//        String myId = request.getParameter("myid");
 //        String password = request.getParameter("password");
 //        String title = request.getParameter("title");
 //        String author = request.getParameter("author");
 //        String content = request.getParameter("content");
 //
-//        System.out.println(Id);
+//        System.out.println(myId);
 //        System.out.println(password);
 //        System.out.println(title);
 //        System.out.println(author);

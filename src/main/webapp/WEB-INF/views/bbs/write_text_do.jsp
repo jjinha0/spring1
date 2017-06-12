@@ -16,11 +16,11 @@
 <body>
 <h1>등록이 완료되었습니다.</h1>
 <ul>
-    <li>${Id}</li>
-    <li>${password}</li>
-    <li>${title}</li>
-    <li>${author}</li>
-    <li>${content}</li>
+    <li>${article.myId}</li>
+    <li>${article.password}</li>
+    <li>${article.title}</li>
+    <li>${article.author}</li>
+    <li>${article.content}</li>
 </ul>
 </body>
 </html>
