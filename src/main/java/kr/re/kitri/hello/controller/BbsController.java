@@ -38,7 +38,7 @@ public class BbsController {
     //요즘엔 다 이렇게 짬.
     @RequestMapping(value = "/bbs/write", method = RequestMethod.POST)
     public ModelAndView writeText(
-//            @RequestParam("id") String Id,
+//            @RequestParam("myId") String myId,
 //            @RequestParam("password") String password,
 //            @RequestParam("title") String title,
 //            @RequestParam("author") String author,
@@ -49,7 +49,7 @@ public class BbsController {
         System.out.println(article);
         ModelAndView mav = new ModelAndView();
         mav.setViewName("bbs/write_text_do");
-        mav.addObject("article",article);
+        mav.addObject("article",article); //자동적으로 jsp로 넘어간다.
 //        mav.addObject("myId",myId);
 //        mav.addObject("password",password);
 //        mav.addObject("title",title);
