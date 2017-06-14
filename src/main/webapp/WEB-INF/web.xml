@@ -21,6 +21,17 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      classpath:spring/applicationContext.xml <!--루트가 되는 설정파일-->
+      classpath:spring/db.xml
+    </param-value>
+  </context-param>
+
   <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>
