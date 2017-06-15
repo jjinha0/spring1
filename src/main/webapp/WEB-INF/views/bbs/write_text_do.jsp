@@ -16,7 +16,7 @@
 <body>
 <h1>등록이 완료되었습니다.</h1>
 <ul>
-    <li>${article.myId}</li>
+    <li>${article.articleId}</li>
     <li>${article.password}</li>
     <li>${article.title}</li>
     <li>${article.author}</li>

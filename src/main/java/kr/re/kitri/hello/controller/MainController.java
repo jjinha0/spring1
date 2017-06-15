@@ -14,7 +14,6 @@ public class MainController {
     @RequestMapping("/")
     public String index() {
 //        return "redirect:bbs/"; //web에서 network보면 status code가 302(redirect뜸).
-
         return "index";
     }
 

@@ -19,16 +19,22 @@ public class BbsService {
 
     //글쓰기. @param article.
     public void registArticle(Article article) {
+
         dao.insertArticle(article); //암기 할 필요가 있음
     }
 
-    //글 전체 보기. @return 전체 글.
-    public List<Article> viewArticles(){
-        return null;
+
+
+    //상세 글 보기. @param articleId글번호. @return 글.
+    public Article viewArticle(String articleId){
+
+        return dao.selectArticleById(articleId);
     }
 
-    //상세 글 보기. @param myId글번호. @return 글.
-    public Article viewArticle(String myId){
-        return null;
+
+    //글 전체 보기. @return 전체 글.
+    public List<Article> getArticles(){
+
+        return dao.selectAllArticles();
     }
 }

@@ -18,9 +18,11 @@
 <h1>전체보기 페이지입니다.</h1>
 <c:forEach var="article" items="${list}">
     <ul>
-    <li>글번호 : ${article.myId}</li>
-    <li>제목 : <a href="/bbs/${article.myId}">${article.title}</a></li>
-    <li>작성자 : ${article.author}</li>
+    <li>글번호 : ${article.articleId}</li>
+    <li>제목 :
+        <a href="/bbs/${article.articleId}">${article.title}</a>
+        (${article.author})
+    </li>
     <li>내용 : ${article.content}</li>
     </ul>
 </c:forEach>

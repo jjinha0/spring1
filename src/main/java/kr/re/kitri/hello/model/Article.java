@@ -5,7 +5,8 @@ package kr.re.kitri.hello.model;
  */
 public class Article {
 
-    private String myId;
+    //html의 name과 일치해야 자동으로 넣어줌
+    private String articleId;
     private String password;
     private String title;
     private String author;
@@ -14,7 +15,7 @@ public class Article {
     @Override
     public String toString() {
         return "Article{" +
-                "myId='" + myId + '\'' +
+                "myId='" + articleId + '\'' +
                 ", password='" + password + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
@@ -22,12 +23,12 @@ public class Article {
                 '}';
     }
 
-    public String getMyId() {
-        return myId;
+    public String getArticleId() {
+        return articleId;
     }
 
-    public void setMyId(String myId) {
-        this.myId = myId;
+    public void setArticleId(String myId) {
+        this.articleId = myId;
     }
 
     public String getPassword() {

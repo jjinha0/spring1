@@ -13,9 +13,9 @@
 <body>
 <h1>등록이 완료되었습니다.</h1>
 <ul>
-    <li>${name}</li>
-    <li>${phone}</li>
-    <li>${email}</li>
+    <li>${amigo.name}</li>
+    <li>${amigo.phone}</li>
+    <li>${amigo.email}</li>
 </ul>
 </body>
 </html>

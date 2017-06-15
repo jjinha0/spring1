@@ -4,6 +4,7 @@ package kr.re.kitri.hello.model;
  * Created by danawacomputer on 2017-06-13.
  */
 public class Amigo {
+    private int amigoid;
     private String name;
     private String phone;
     private String email;
@@ -11,10 +12,19 @@ public class Amigo {
     @Override
     public String toString() {
         return "Amigo{" +
-                "name='" + name + '\'' +
+                "amigoid=" + amigoid +
+                ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public int getAmigoid() {
+        return amigoid;
+    }
+
+    public void setAmigoid(int amigoid) {
+        this.amigoid = amigoid;
     }
 
     public String getName() {
