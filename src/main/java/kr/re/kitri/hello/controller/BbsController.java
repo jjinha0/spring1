@@ -1,5 +1,6 @@
 package kr.re.kitri.hello.controller;
 
+import com.sun.org.glassfish.gmbal.ParameterNames;
 import kr.re.kitri.hello.common.MockArticle;
 import kr.re.kitri.hello.model.Article;
 import kr.re.kitri.hello.service.BbsService;
@@ -42,6 +43,18 @@ public class BbsController {
         return new ModelAndView("bbs/view_all").addObject("list",list);
 //      ->views directory에 view_all.jsp파일 만들어준다.
     }
+    @RequestMapping("/api")
+    @ResponseBody
+    public List<Article> viewAllApi(){
+        List<Article> list = service.getArticles();
+        return list;
+
+    }
+
+
+
+
+
 
     @RequestMapping("/{articleId}")//url에 변수 자체를 사용하기 위함.
     public ModelAndView viewDetail(@PathVariable("articleId") String articleId){
@@ -53,6 +66,16 @@ public class BbsController {
 //        mav.addObject("articleId",articleId);
         return new ModelAndView("bbs/view_detail").addObject("article",article);
     }
+    @RequestMapping("/{articleId}/api")
+    @ResponseBody //여기에 article객체 자체가 날아가겠다.
+    public Article viewDetailApi(@PathVariable String articleId){
+
+        Article article = service.viewArticle(articleId);
+        return article;
+
+    }
+
+
 
 
 //    @RequestMapping(value = "/write", method = RequestMethod.GET)

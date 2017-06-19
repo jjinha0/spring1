@@ -1,5 +1,6 @@
 package kr.re.kitri.hello.dao;
 
+import kr.re.kitri.hello.dao.article.ArticleDaoJdbc;
 import kr.re.kitri.hello.model.Article;
 import org.junit.Assert;
 import org.junit.Before;
@@ -28,7 +29,7 @@ public class ArticleDaoTest {
         @Test
         public void testSelectArticleById(){
 
-            ArticleDao dao = context.getBean("articleDao", ArticleDao.class);
+            ArticleDaoJdbc dao = context.getBean("articleDaoJdbc", ArticleDaoJdbc.class);
             Article article = dao.selectArticleById("2");
             Assert.assertTrue(article.getAuthor().equals("lee"));
         }
@@ -36,7 +37,7 @@ public class ArticleDaoTest {
 
         @Test
         public void testSelectAllArticles(){
-            ArticleDao dao = context.getBean("articleDao", ArticleDao.class);
+            ArticleDaoJdbc dao = context.getBean("articleDaoJdbc", ArticleDaoJdbc.class);
             List<Article> list = dao.selectAllArticles();
             Assert.assertTrue(list.size() > 0);
             System.out.println(list.size());
@@ -49,7 +50,7 @@ public class ArticleDaoTest {
     public void testInsertArticle(){
 
 
-        ArticleDao dao = context.getBean("articleDao",ArticleDao.class); //첫글자만 소문자로 바꾸고 default가 이름이 똑같이 됨.
+        ArticleDaoJdbc dao = context.getBean("articleDaoJdbc", ArticleDaoJdbc.class); //첫글자만 소문자로 바꾸고 default가 이름이 똑같이 됨.
 
         Article article = new Article();
         article.setArticleId("3");
