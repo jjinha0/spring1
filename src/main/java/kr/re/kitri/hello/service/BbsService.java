@@ -2,6 +2,8 @@ package kr.re.kitri.hello.service;
 
 
 import kr.re.kitri.hello.dao.article.ArticleDao;
+import kr.re.kitri.hello.dao.article.IDeleteArticleDao;
+import kr.re.kitri.hello.dao.article.IModifyArticleDao;
 import kr.re.kitri.hello.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,10 +19,16 @@ public class BbsService {
         @Autowired
         private ArticleDao dao;
 
-    //글쓰기. @param article.
+        @Autowired
+        private IModifyArticleDao modifydao;
+
+        @Autowired
+        private IDeleteArticleDao deletedao;
+
+
     public void registArticle(Article article) {
 
-        dao.insertArticle(article); //암기 할 필요가 있음
+        dao.insertArticle(article);
     }
 
 
@@ -37,4 +45,18 @@ public class BbsService {
 
         return dao.selectAllArticles();
     }
+
+    public void modifyArticle(String articleId, Article article) {
+        modifydao.modifyArticle(articleId, article);
+    }
+
+    public void removeArticle(String articleId) {
+        deletedao.deleteArticle(articleId);
+    }
+
+
+
+
+
+
 }

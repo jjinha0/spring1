@@ -132,6 +132,12 @@ public class BbsController {
 //    }
 
 
+    @PostMapping("/write/api")
+    public String doWriteApi(@RequestBody Article article) {
+                service.registArticle(article);
+                return "bbs/view_all";
+    }
+
 
 
 
